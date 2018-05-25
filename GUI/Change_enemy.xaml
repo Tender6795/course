@@ -1,0 +1,56 @@
+﻿<Window x:Class="GUI.Change_enemy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="Change_enemy" Height="380" Width="650">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="WhiteSmoke"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+
+        <ListView Name="ListViewEnemyShips"  Background="Black"  
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel>
+
+                    </WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Width="195" >
+                        <Image Name="Image" Source="{Binding Picture}" Width="195" Height="195"  />
+                        <DockPanel>
+                            <Label>Название:</Label>
+                            <Label  Content="{Binding Name}"></Label>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label>Урон:</Label>
+                            <Label  Content="{Binding Damage}"></Label>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label>Жизни:</Label>
+                            <Label  Content="{Binding Health}"></Label>
+                        </DockPanel>
+
+                        <Button Name="ButChangeShip"  Margin="2"  Click="ButChangeShip_Click">Сменить</Button>
+                        
+                        <DockPanel>
+                            <Button Width="auto" Name="ButDel">Удалить</Button>
+                            <Button Width="auto" Name="ButRedact">Редактировать</Button>
+                        </DockPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+</Window>

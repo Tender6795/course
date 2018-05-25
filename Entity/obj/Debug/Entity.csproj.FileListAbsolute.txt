@@ -1,0 +1,16 @@
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\Entity.exe.config
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\Entity.exe
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\Entity.pdb
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\ClassLibrary.dll
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\EntityFramework.dll
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\ClassLibrary.pdb
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\ClassLibrary.dll.config
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\EntityFramework.xml
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\obj\Debug\Entity.csprojResolveAssemblyReference.cache
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\obj\Debug\Entity.exe
+C:\Users\ПК\source\repos\StarBattle_V2\Entity\obj\Debug\Entity.pdb

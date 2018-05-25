@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ClassLibrary.DataModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ClassLibrary.DataModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfArmor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Armor" nillable="true" type="tns:Armor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArmor" nillable="true" type="tns:ArrayOfArmor" />
+  <xs:complexType name="Armor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArmorId" type="xs:int" />
+      <xs:element minOccurs="0" name="Cost" type="xs:int" />
+      <xs:element minOccurs="0" name="Life" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Picture" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Armor" nillable="true" type="tns:Armor" />
+  <xs:complexType name="ArrayOfWeapon">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Weapon" nillable="true" type="tns:Weapon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWeapon" nillable="true" type="tns:ArrayOfWeapon" />
+  <xs:complexType name="Weapon">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cost" type="xs:int" />
+      <xs:element minOccurs="0" name="Damage" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Picture" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="WeaponId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Weapon" nillable="true" type="tns:Weapon" />
+  <xs:complexType name="ArrayOfEnemyShip">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EnemyShip" nillable="true" type="tns:EnemyShip" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnemyShip" nillable="true" type="tns:ArrayOfEnemyShip" />
+  <xs:complexType name="EnemyShip">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Damage" type="xs:int" />
+      <xs:element minOccurs="0" name="EnemyShipId" type="xs:int" />
+      <xs:element minOccurs="0" name="Health" type="xs:int" />
+      <xs:element minOccurs="0" name="Money" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Picture" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EnemyShip" nillable="true" type="tns:EnemyShip" />
+  <xs:complexType name="ArrayOfStarShip">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StarShip" nillable="true" type="tns:StarShip" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStarShip" nillable="true" type="tns:ArrayOfStarShip" />
+  <xs:complexType name="StarShip">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArmorId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Armors" nillable="true" type="tns:ArrayOfArmor" />
+      <xs:element minOccurs="0" name="Coefficient" type="xs:int" />
+      <xs:element minOccurs="0" name="Cost" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Picture" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="StarShipId" type="xs:int" />
+      <xs:element minOccurs="0" name="WeaponId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Weapons" nillable="true" type="tns:ArrayOfWeapon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StarShip" nillable="true" type="tns:StarShip" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Money" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ResultTables" nillable="true" type="tns:ArrayOfResultTable" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="tns:Role" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+      <xs:element minOccurs="0" name="StarShipId" type="xs:int" />
+      <xs:element minOccurs="0" name="StarShips" nillable="true" type="tns:ArrayOfStarShip" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfResultTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultTable" nillable="true" type="tns:ResultTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultTable" nillable="true" type="tns:ArrayOfResultTable" />
+  <xs:complexType name="ResultTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Draw" type="xs:int" />
+      <xs:element minOccurs="0" name="Lose" type="xs:int" />
+      <xs:element minOccurs="0" name="ResultTableId" type="xs:int" />
+      <xs:element minOccurs="0" name="Victory" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultTable" nillable="true" type="tns:ResultTable" />
+  <xs:complexType name="Role">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+</xs:schema>

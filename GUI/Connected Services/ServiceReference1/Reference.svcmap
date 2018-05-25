@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ef6ccdd4-4618-4d58-b31f-010263e749a7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ComponentsReturn" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ComponentsReturn.xsd" MetadataType="Schema" ID="507928e5-f742-4293-a54b-1aaf6218caec" SourceId="1" SourceUrl="http://localhost/ComponentsReturn?xsd=xsd1" />
+    <MetadataFile FileName="ComponentsReturn.disco" MetadataType="Disco" ID="31107b8c-fa5f-47e2-a8a2-31e49e3246f9" SourceId="1" SourceUrl="http://localhost/ComponentsReturn?disco" />
+    <MetadataFile FileName="ComponentsReturn1.xsd" MetadataType="Schema" ID="be89cf07-5381-4456-9a67-4b68af6a1035" SourceId="1" SourceUrl="http://localhost/ComponentsReturn?xsd=xsd2" />
+    <MetadataFile FileName="ComponentsRetun.wsdl" MetadataType="Wsdl" ID="75900e59-dac2-4489-b311-8dad5228bc7f" SourceId="1" SourceUrl="http://localhost/ComponentsReturn?wsdl" />
+    <MetadataFile FileName="ComponentsReturn2.xsd" MetadataType="Schema" ID="26e389e4-a023-4843-aaba-cf8af1d765dd" SourceId="1" SourceUrl="http://localhost/ComponentsReturn?xsd=xsd0" />
+    <MetadataFile FileName="ComponentsReturn.wsdl" MetadataType="Wsdl" ID="69d7e228-008f-4304-824c-f0c265c312b9" SourceId="1" SourceUrl="http://localhost/ComponentsReturn?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

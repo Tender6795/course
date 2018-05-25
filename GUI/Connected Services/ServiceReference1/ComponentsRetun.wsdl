@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CompontsReturn" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" location="http://localhost/ComponentsReturn?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/ComponentsReturn?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/ComponentsReturn?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/ComponentsReturn?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ClassLibrary.DataModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICompontsReturn_ReturnArmor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnArmor" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_ReturnArmor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnArmorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_ReturnWeapon_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnWeapon" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_ReturnWeapon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnWeaponResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_ReturnEnemyShip_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnEnemyShip" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_ReturnEnemyShip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnEnemyShipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_ReturnStarShip_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnStarShip" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_ReturnStarShip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnStarShipResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_Is_successful_registration_InputMessage">
+    <wsdl:part name="parameters" element="tns:Is_successful_registration" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_Is_successful_registration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Is_successful_registrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_ReturnUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnUser" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_ReturnUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_UserRegestration_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserRegestration" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_UserRegestration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserRegestrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_ReturnAllUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnAllUser" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_ReturnAllUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnAllUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save" />
+  </wsdl:message>
+  <wsdl:message name="ICompontsReturn_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICompontsReturn">
+    <wsdl:operation name="ReturnArmor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnArmor" message="tns:ICompontsReturn_ReturnArmor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnArmorResponse" message="tns:ICompontsReturn_ReturnArmor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnWeapon">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnWeapon" message="tns:ICompontsReturn_ReturnWeapon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnWeaponResponse" message="tns:ICompontsReturn_ReturnWeapon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnEnemyShip">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnEnemyShip" message="tns:ICompontsReturn_ReturnEnemyShip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnEnemyShipResponse" message="tns:ICompontsReturn_ReturnEnemyShip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnStarShip">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnStarShip" message="tns:ICompontsReturn_ReturnStarShip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnStarShipResponse" message="tns:ICompontsReturn_ReturnStarShip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Is_successful_registration">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompontsReturn/Is_successful_registration" message="tns:ICompontsReturn_Is_successful_registration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompontsReturn/Is_successful_registrationResponse" message="tns:ICompontsReturn_Is_successful_registration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnUser" message="tns:ICompontsReturn_ReturnUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnUserResponse" message="tns:ICompontsReturn_ReturnUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRegestration">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompontsReturn/UserRegestration" message="tns:ICompontsReturn_UserRegestration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompontsReturn/UserRegestrationResponse" message="tns:ICompontsReturn_UserRegestration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAllUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnAllUser" message="tns:ICompontsReturn_ReturnAllUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompontsReturn/ReturnAllUserResponse" message="tns:ICompontsReturn_ReturnAllUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompontsReturn/Save" message="tns:ICompontsReturn_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompontsReturn/SaveResponse" message="tns:ICompontsReturn_Save_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICompontsReturn" type="tns:ICompontsReturn">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReturnArmor">
+      <soap:operation soapAction="http://tempuri.org/ICompontsReturn/ReturnArmor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnWeapon">
+      <soap:operation soapAction="http://tempuri.org/ICompontsReturn/ReturnWeapon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnEnemyShip">
+      <soap:operation soapAction="http://tempuri.org/ICompontsReturn/ReturnEnemyShip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnStarShip">
+      <soap:operation soapAction="http://tempuri.org/ICompontsReturn/ReturnStarShip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Is_successful_registration">
+      <soap:operation soapAction="http://tempuri.org/ICompontsReturn/Is_successful_registration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnUser">
+      <soap:operation soapAction="http://tempuri.org/ICompontsReturn/ReturnUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRegestration">
+      <soap:operation soapAction="http://tempuri.org/ICompontsReturn/UserRegestration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnAllUser">
+      <soap:operation soapAction="http://tempuri.org/ICompontsReturn/ReturnAllUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap:operation soapAction="http://tempuri.org/ICompontsReturn/Save" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CompontsReturn">
+    <wsdl:port name="BasicHttpBinding_ICompontsReturn" binding="tns:BasicHttpBinding_ICompontsReturn">
+      <soap:address location="http://localhost/ComponentsReturn/Ep1" />
+    </wsdl:port>
+    <wsdl:port name="MetadataExchangeHttpBinding_ICompontsReturn" binding="i0:MetadataExchangeHttpBinding_ICompontsReturn">
+      <soap12:address location="http://localhost/ComponentsReturn/mex" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost/ComponentsReturn/mex</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
