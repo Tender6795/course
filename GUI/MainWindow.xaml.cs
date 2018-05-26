@@ -35,8 +35,8 @@ namespace GUI
         private User user;
         Uri iconUriStart = new Uri("pack://application:,,,/Images/Start.ico", UriKind.RelativeOrAbsolute);
         Uri iconUriStop = new Uri("pack://application:,,,/Images/Stop.ico", UriKind.RelativeOrAbsolute);
-       // Uri iconUriSound = new Uri("pack://application:,,,/Images/Sound.ico", UriKind.RelativeOrAbsolute);
-      //  Uri iconUriNoSound = new Uri("pack://application:,,,/Images/NoSound.ico", UriKind.RelativeOrAbsolute);
+        // Uri iconUriSound = new Uri("pack://application:,,,/Images/Sound.ico", UriKind.RelativeOrAbsolute);
+        //  Uri iconUriNoSound = new Uri("pack://application:,,,/Images/NoSound.ico", UriKind.RelativeOrAbsolute);
         CancellationTokenSource _cancelTokenSource;
         CancellationToken _token;
         StarShip starShip = new StarShip();
@@ -53,10 +53,10 @@ namespace GUI
         public MainWindow(User user)
         {
             Filling_from_the_database();
-           
+
             InitializeComponent();
             this.user = user;
-           
+
             Title = user.Name;
             _cancelTokenSource = new CancellationTokenSource();
             _token = _cancelTokenSource.Token;
@@ -65,7 +65,7 @@ namespace GUI
             {
                 IsServiceAlive();
             }, _token);
-            
+
         }
         private void IsServiceAlive()
         {
@@ -81,7 +81,7 @@ namespace GUI
                     MetadataExchangeClient mexClient = new MetadataExchangeClient(new Uri("http://localhost/ComponentsReturn"), MetadataExchangeClientMode.HttpGet);
                     MetadataSet metadata = mexClient.GetMetadata();
                     this.Set(() => this.Icon = BitmapFrame.Create(iconUriStart));
-                    BtOpen.Set(()=> BtOpen.IsEnabled = true);
+                    BtOpen.Set(() => BtOpen.IsEnabled = true);
                     BtSave.Set(() => BtSave.IsEnabled = true);
                 }
                 catch (Exception ex)
@@ -134,9 +134,9 @@ namespace GUI
         public void CreateNewGame()
         {
             gameClass.UserName = user.Name;
-            gameClass.Money = user.Money+10000;
+            gameClass.Money = user.Money ;
 
-           
+
             starShip = starShips.FirstOrDefault(a => a.StarShipId == user.StarShipId);
             gameClass.MyShipPicture = convector(starShip.Picture);
             gameClass.MyShipName = starShip.Name;
@@ -167,10 +167,10 @@ namespace GUI
             gameClass.EnemyCost = enemyShips.First().Money;
 
             this.DataContext = gameClass;
-           
+
         }
-     
-      public  BitmapImage convector(byte[] Picture)
+
+        public BitmapImage convector(byte[] Picture)
         {
             BitmapImage image = new BitmapImage();
             using (MemoryStream ms = new MemoryStream(Picture))
@@ -187,31 +187,33 @@ namespace GUI
 
         private void BtUpdate_Click(object sender, RoutedEventArgs e)
         {
-            Update update = new Update(armors, weapons, starShips, gameClass,this);
+            Update update = new Update(armors, weapons, starShips, gameClass, this);
 
             update.Show();
             update.Owner = this;
-           
+
         }
 
         private void ChangeEnemy_Click(object sender, RoutedEventArgs e)
         {
-            Change_enemy change_Enemy = new Change_enemy(enemyShips,gameClass,this);
+            Change_enemy change_Enemy = new Change_enemy(enemyShips, gameClass, this);
             change_Enemy.Show();
 
         }
 
-        private void ButFix_Click(object sender, RoutedEventArgs e)
+        private void ButFix_Click(object sender, RoutedEventArgs e) //фигня не правильная
         {
-        if ( gameClass.MyHealthMax-gameClass.MyHealthNow>=gameClass.Money)
+            if (gameClass.MyHealthMax - gameClass.MyHealthNow <= gameClass.Money)
             {
                 gameClass.Money -= gameClass.MyHealthMax - gameClass.MyHealthNow;
+                gameClass.MyHealthNow = gameClass.MyHealthMax;
             }
-        else
+            else 
             {
                 gameClass.MyHealthNow += gameClass.Money;
                 gameClass.Money = 0;
             }
+            gameClass.NotifyPropertyChanged();
         }
 
         private async void BtSave_Click(object sender, RoutedEventArgs e)
@@ -220,7 +222,7 @@ namespace GUI
             user.Money = gameClass.Money;
             var client = new ServiceReference1.CompontsReturnClient("BasicHttpBinding_ICompontsReturn");
             bool flag = await client.SaveAsync(user, starShip);
-            if(flag==true)
+            if (flag == true)
             {
                 MessageBox.Show("Сохранено");
             }
@@ -232,10 +234,10 @@ namespace GUI
 
         private void BtOpen_Click(object sender, RoutedEventArgs e)
         {
-           
+
             try
             {
-                CreateNewGame();
+                Filling_from_the_database();
                 MessageBox.Show("Загружено");
             }
             catch (Exception)
@@ -243,7 +245,26 @@ namespace GUI
 
                 MessageBox.Show("Ошибка");
             }
-            
+
+        }
+
+        private void ButAttack_Click(object sender, RoutedEventArgs e)
+        {
+            gameClass.EnemyHealthNow -= gameClass.MyDamage;
+            if (gameClass.EnemyHealthNow <= 0)
+            {
+                gameClass.Money += gameClass.EnemyCost*15;
+                gameClass.EnemyHealthNow = gameClass.EnemyHealthMax;
+            }
+            else
+            {
+                gameClass.MyHealthNow -= gameClass.EnemyDamage;
+                if (gameClass.MyHealthNow<=0)
+                {
+                    MessageBox.Show("Вы погибли");
+                }
+            }
+            gameClass.NotifyPropertyChanged();
         }
     }
 }

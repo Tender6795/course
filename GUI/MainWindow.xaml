@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Battle" Name="Battle" Height="350" Width="625"
+        Title="Battle" Name="Battle" WindowState="Maximized"
        >
     <Window.Resources>
         <Style  TargetType="Button">
@@ -28,6 +28,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition ></ColumnDefinition>
+            
             <ColumnDefinition Width="3" ></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             
@@ -35,8 +36,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition Height="35"></RowDefinition>
-            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
 
         </Grid.RowDefinitions>
 
@@ -70,7 +71,7 @@
         <DockPanel Grid.Column="1" Grid.RowSpan="4" Background="Wheat"></DockPanel>
 
         <DockPanel Grid.Row="2" Grid.Column="2" LastChildFill="true" Background="Black"  >
-            <Button Width="90" Background="Black">Атаковать</Button>
+            <Button Width="90" Background="Black" Name="ButAttack" Click="ButAttack_Click">Атаковать</Button>
             <Button Width="90" Background="Black" Name="ChangeEnemy" Click="ChangeEnemy_Click">Сменить</Button>
             <ProgressBar Grid.Row="2" Grid.Column="2"  Name="ProgressEnemyLife"
                          
@@ -96,16 +97,41 @@
         </DockPanel>
 
         <DockPanel Grid.Row="3" Grid.ColumnSpan="3" Background="Black">
-            <Button Width="90" Background="Black" Name="BtSave" HorizontalAlignment="Left" Click="BtSave_Click">Сохранить</Button>
+            <Button Width="90"  Background="Black" Name="BtSave" HorizontalAlignment="Left" Click="BtSave_Click">Сохранить</Button>
             <Button Width="90" Background="Black" Name="BtOpen" HorizontalAlignment="Left" Click="BtOpen_Click">Загрузить</Button>
             <!--<Button Width="35" Name="BtSound" Click="BtSound_Click">
                 <Image Name="ImageSound">
                     
                 </Image>
             </Button>-->
-            <TextBox  FontStyle="Oblique" FontFamily="Segoe Print" 
+            <Image Width="60" Name="ImgArmor"  Source="{Binding Path=WeaponPicture}"></Image>
+            <Image Width="60" Name="ImgWeapon" Source="{Binding Path=ArmorPicture}"></Image>
+            <DockPanel LastChildFill="False">
+                <Label  FontStyle="Oblique" FontFamily="Segoe Print" 
+               FontSize="18" Background="Black" Foreground="WhiteSmoke">Мой урон: </Label>
+                <Label  FontStyle="Oblique" FontFamily="Segoe Print" 
                FontSize="18" Background="Black" 
-               Foreground="WhiteSmoke" IsReadOnly="True"></TextBox>
+               Foreground="WhiteSmoke"  
+                          Content="{Binding Path=MyDamage, UpdateSourceTrigger=PropertyChanged}"></Label>
+               
+                
+                <Label FontStyle="Oblique" FontFamily="Segoe Print" 
+               FontSize="18" Background="Black" Foreground="WhiteSmoke">Мои жизни: </Label>
+               <Label  FontStyle="Oblique" FontFamily="Segoe Print" 
+               FontSize="18" Background="Black" 
+               Foreground="WhiteSmoke" 
+                           Content="{Binding Path=MyHealthNow, UpdateSourceTrigger=PropertyChanged}"></Label>
+
+
+                <Label FontStyle="Oblique" FontFamily="Segoe Print" 
+               FontSize="18" Background="Black" Foreground="WhiteSmoke">Мои деньги:</Label>
+                <Label  FontStyle="Oblique" FontFamily="Segoe Print" 
+               FontSize="18" Background="Black" 
+               Foreground="WhiteSmoke" 
+                           Content="{Binding Path=Money, UpdateSourceTrigger=PropertyChanged}"></Label>
+
+            </DockPanel>
+            
         </DockPanel>
     </Grid>
 </Window>

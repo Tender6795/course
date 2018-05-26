@@ -110,23 +110,30 @@ namespace GUI
                     (!string.IsNullOrWhiteSpace(TbPassword.Text.Trim())))
                 {
                     var client = new ServiceReference1.CompontsReturnClient("BasicHttpBinding_ICompontsReturn");
-                    bool res = await client.Is_successful_registrationAsync(TbLogin.Text, TbPassword.Text.Trim());
-                    if (!res)
-                    {
-                        ButOk.Set(() => ButOk.IsEnabled = true);
-                        MessageBox.Show("Ошибка логин/пароль");
-                    }
-                    else
-                    {
+                   // bool res = await client.Is_successful_registrationAsync(TbLogin.Text, TbPassword.Text.Trim());
+                    //if (!res)
+                    //{
+                    //    ButOk.Set(() => ButOk.IsEnabled = true);
+                    //    MessageBox.Show("Ошибка логин/пароль");
+                    //}
+                    //else
+                    //{
 
-                        user = await client.ReturnUserAsync(TbLogin.Text, TbPassword.Text.Trim());
+                        user = await client.ReturnUserAsync(TbLogin.Text.Trim(), TbPassword.Text.Trim());
+                        if(user==null)
+                        {
+                            MessageBox.Show("Неправильный пароль/логин");
+                        }
 
+                        else
+                        {
+                            MainWindow mainWindow = new MainWindow(user);
 
-                        MainWindow mainWindow = new MainWindow(user);
-
-                        mainWindow.Show();
-                        this.Close();
-                    }
+                            mainWindow.Show();
+                            this.Close();
+                        }
+                        
+                    //}
                 }
                 else
                 {
